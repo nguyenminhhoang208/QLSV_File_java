@@ -1,6 +1,8 @@
 package menu.feature;
 
+import menu.Menu;
 import student.Student;
+import student.StudentIO;
 
 import java.util.Scanner;
 
@@ -26,7 +28,8 @@ public class AddStudent extends Feature {
         System.out.println("Nhap GPA sinh vien: ");
         double gpa = input.nextDouble();
 
-        Student newStudent = new Student(name, age, andress, gpa);
-        System.out.println("new student: " + newStudent.toString());
+        Student newStudent = new Student(name, age, gpa,andress);
+        StudentIO.write(newStudent);
+        Menu.showMenu();
     }
 }

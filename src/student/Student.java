@@ -1,6 +1,8 @@
 package student;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student{
     private static int currentId = 1;
     private int id;
     private String name;
@@ -8,8 +10,19 @@ public class Student {
     private String andress;
     private double gpa;
 
-    public Student(String name, int age, String andress, double gpa) {
+    public Student() {
+    }
+    public Student(int id,String name, int age,  double gpa, String andress) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.andress = andress;
+        this.gpa = gpa;
+    }
 
+    public Student(String name, int age,  double gpa, String andress) {
+        super();
         this.id = ++currentId;
         this.name = name;
         this.age = age;
@@ -54,8 +67,8 @@ public class Student {
     }
 
     @Override
-    public String toString (){
-        return ">>> student: { id: " + this.id + ",\nname: " + this.name + ",\nandress: " + this.andress + ",\nage: " + this.age
-                + ",\nGPA: " + this.gpa + " \n}";
+    public String toString() {
+        return "\n{\nid: " + this.id + ",\nname: " + this.name + ",\nandress: " + this.andress + ",\nage: " + this.age
+                + ",\nGPA: " + this.gpa + "\n}";
     }
 }

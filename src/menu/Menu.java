@@ -1,25 +1,14 @@
 package menu;
 
-import menu.feature.AddStudent;
-import menu.feature.Feature;
+import menu.feature.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Menu {
-    private ArrayList<Feature> listMenu = new ArrayList<Feature>();
+    public static ArrayList<Feature> listMenu = new ArrayList<Feature>();
 
-    public Menu() {
-
-        listMenu.add(new AddStudent(1));
-        listMenu.add(new AddStudent(2));
-        listMenu.add(new AddStudent(3));
-        listMenu.add(new AddStudent(4));
-        listMenu.add(new AddStudent(5));
-
-    }
-    public int showMenuAndGetKey() {
+    public static void showMenu() {
         for (int i = 1; i <= 15; i++) {
             System.out.print("*");
         }
@@ -39,10 +28,14 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         System.out.println("\nSelect option: ");
         int key = input.nextInt();
-        return key;
+        boolean flag;
+        do {
+            flag = selectFeature(key);
+        }
+        while (!flag);
     }
 
-    public boolean selectFeature(int key) {
+    public static boolean selectFeature(int key) {
         System.out.println();
         for (Feature feature : listMenu) {
             if (key == feature.getKey()) {

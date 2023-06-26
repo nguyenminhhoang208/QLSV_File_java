@@ -1,0 +1,3 @@
+2,Nguyen Minh Hoang,20,10.0,41d
+2,Minh Anh,7,10.0,Ba Don
+2,Nguyen Minh Hoang,20,8.0,41d
